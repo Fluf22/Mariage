@@ -21,34 +21,41 @@ const useStyles = makeStyles((theme) => createStyles({
 		marginLeft: isMobile ? "13px" : theme.spacing(3),
 		fontSize: isMobile ? "28px" : "2rem"
 	}),
-	installButtonContainer: isMobile => ({
+	headerButtonContainer: isMobile => ({
 		flexGrow: isMobile ? 0 : 0,
-		margin: "0 13px"
+		margin: "0 13px",
+		"&:focus": {
+			outline: "none"
+		}
 	}),
-	installButton: isMobile => (isMobile ? {} : {
+	headerButton: isMobile => (isMobile ? {} : {
 		marginRight: "13px",
-		padding: "0px 15px"
+		padding: "0px 15px",
+		"&:focus": {
+			outline: "none"
+		}
 	}),
-	installButtonIcon: isMobile => (isMobile ? {} : {
+	headerButtonIcon: isMobile => (isMobile ? {} : {
 		marginLeft: "7px",
 		marginBottom: "3px"
 	}),
 	navLink: {
-		color: "white",
+		color: "#4c7192",
 		margin: "0 10px",
-		fontSize: "22px",
+		fontSize: "17px",
 		cursor: "pointer",
 		"&:hover": {
-			color: "white",
-			textDecoration: "underline"
+			borderBottom: "3px solid #4c7192",
+			borderRadius: "0"
 		}
 	},
 	selectedLink: {
-		color: "white",
+		color: "#4c7192",
 		margin: "0 10px",
 		cursor: "pointer",
-		textDecoration: "underline",
-		fontSize: "25px"
+		borderBottom: "3px solid #4c7192",
+		borderRadius: "0",
+		fontSize: "17px"
 	}
 }));
 

@@ -5,7 +5,6 @@ import Header from '../Header';
 import ErrorBoundary from './error-boundary';
 import useStyles from './styles';
 import ServiceWorkerWrapper from '../ServiceWorkerWrapper';
-import Footer from '../Footer';
 
 const NotFound = React.lazy(() => import('../NotFound'));
 const Informations = React.lazy(() => import('../Informations'));
@@ -47,11 +46,6 @@ const Home = (props: RouteComponentProps<HomeRouteProps>) => {
 					</ErrorBoundary>
 				</Grid>
 			</Grid>
-			{
-				isMobile ? (
-					<Footer page={props.match.params.slug || ""} />
-				) : ("")
-			}
 			<ServiceWorkerWrapper />
 		</Grid>
 	);
