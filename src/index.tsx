@@ -1,23 +1,65 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
+import './core.css';
 import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 import reportWebVitals from './reportWebVitals';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { SnackbarProvider } from 'notistack';
+import { createMuiTheme, CssBaseline, IconButton, Theme, ThemeProvider } from '@material-ui/core';
+import CloseIcon from '@material-ui/icons/Close';
+import Main from './components/Main';
+import { QueryClient, QueryClientProvider } from 'react-query';
+
+global.installAppEvent = undefined;
+
+const theme: Theme = createMuiTheme({
+	palette: {
+		primary: {
+			main: "#4c7192",
+			contrastText: "#ffffff"
+		},
+		secondary: {
+			main: "#cfd8dc",
+			contrastText: "#000000"
+		}
+	}
+});
+
+const queryClient = new QueryClient();
+
+const notistackRef = React.createRef<SnackbarProvider>();
+const onClickDismiss = (key: string | number) => () => {
+	notistackRef.current?.closeSnackbar(key);
+}
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
+	<React.StrictMode>
+		<QueryClientProvider client={queryClient}>
+			<ThemeProvider theme={theme}>
+				<CssBaseline />
+				<SnackbarProvider
+					ref={notistackRef}
+					maxSnack={2}
+					preventDuplicate
+					autoHideDuration={3000}
+					anchorOrigin={{ horizontal: "right", vertical: "bottom" }}
+					action={(key) => (
+						<IconButton onClick={onClickDismiss(key)} color="secondary">
+							<CloseIcon />
+						</IconButton>
+					)}
+				>
+					<Router>
+						<Route path="/:slug?" component={Main} />
+					</Router>
+
+				</SnackbarProvider>
+			</ThemeProvider>
+		</QueryClientProvider>
+	</React.StrictMode>,
+	document.getElementById('root')
 );
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://cra.link/PWA
 serviceWorkerRegistration.unregister();
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+reportWebVitals(console.log);
