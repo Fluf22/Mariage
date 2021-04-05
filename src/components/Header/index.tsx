@@ -81,7 +81,12 @@ const Header = (props: HeaderProps) => {
 					<Grid container direction="row" justify="space-between" alignItems="center" >
 						<Grid item container direction="row" alignItems="center" xs>
 							<img src="/logo192.png" width={isMobile ? "42" : "64"} alt="Logo du mariage" className="my-1" />
-							<Typography variant="h3" className={classes.title}>Apolline & Thomas</Typography>
+							<div
+								className="ml-1 text-2xl sm:ml-3 sm:text-4xl"
+								style={{ fontFamily: "'Parisienne', cursive" }}
+							>
+								Apolline & Thomas
+							</div>
 						</Grid>
 						{
 							isMobile ? (
