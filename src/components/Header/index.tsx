@@ -36,7 +36,7 @@ const pages: PageType[] = [
 ];
 
 const Header = (props: HeaderProps) => {
-	const isMobile = useMediaQuery('(max-width:1024px)');
+	const isMobile = useMediaQuery('(max-width:1360px)');
 	const classes = useStyles(isMobile);
 	const history = useHistory();
 	const [showInstallButton, setShowInstallButton] = useState<boolean>(false);

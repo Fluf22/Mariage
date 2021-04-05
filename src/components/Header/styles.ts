@@ -23,7 +23,10 @@ const useStyles = makeStyles((theme) => createStyles({
 	}),
 	headerButtonContainer: isMobile => ({
 		flexGrow: isMobile ? 0 : 0,
-		margin: "0 13px"
+		margin: "0 13px",
+		"&:focus": {
+			outline: "none"
+		}
 	}),
 	headerButton: isMobile => (isMobile ? {} : {
 		marginRight: "13px",
