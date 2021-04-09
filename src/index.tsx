@@ -9,6 +9,24 @@ import { createMuiTheme, CssBaseline, IconButton, Theme, ThemeProvider } from '@
 import CloseIcon from '@material-ui/icons/Close';
 import Main from './components/Main';
 import { QueryClient, QueryClientProvider } from 'react-query';
+import * as Realm from "realm-web";
+
+const REALM_APP_ID = "apollinethomas-fjjob";
+const app: Realm.App = new Realm.App({ id: REALM_APP_ID });
+
+const loginAnonymous = async () => {
+	const credentials = Realm.Credentials.anonymous();
+	try {
+		const user: Realm.User = await app.logIn(credentials);
+		return user
+	} catch (err) {
+		console.error("Failed to log in", err);
+	}
+}
+
+loginAnonymous().then(user => {
+	console.log("Successfully logged in!", user);
+});
 
 global.installAppEvent = undefined;
 

@@ -19,7 +19,6 @@ const useStyles = makeStyles((theme) => createStyles({
 	title: isMobile => ({
 		fontFamily: "'Parisienne', cursive",
 		marginLeft: isMobile ? "13px" : theme.spacing(3),
-		fontSize: isMobile ? "28px" : "2rem"
 	}),
 	headerButtonContainer: isMobile => ({
 		flexGrow: isMobile ? 0 : 0,
