@@ -1,5 +1,7 @@
 import React, { useRef, useEffect, useState } from 'react';
-import mapboxgl from 'mapbox-gl';
+// @ts-ignore
+// eslint-disable-next-line import/no-webpack-loader-syntax
+import mapboxgl from '!mapbox-gl';
 import useStyles from './styles';
 
 mapboxgl.accessToken = 'pk.eyJ1IjoiZmx1ZiIsImEiOiJja25hbGg1bGQxMnA2Mm5tcTg4ZHowN2tiIn0.ApbA5BLHdvHT2hTbZD5ITw';
