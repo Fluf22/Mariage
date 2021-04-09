@@ -25,27 +25,23 @@ const Home = (props: RouteComponentProps<HomeRouteProps>) => {
 	return (
 		<Grid container direction="column" className={classes.root}>
 			<Header page={props.match.params.slug || ""} />
-			<Grid item container direction="column" className={classes.body}>
-				<Grid item container direction="row" className={classes.slug}>
-					<ErrorBoundary>
-						<Suspense fallback={
-							<Grid container justify="center" alignItems="center" className={classes.fallback}>
-								<CircularProgress color="secondary" />
-							</Grid>
-						}>
-							<Switch>
-								<Route exact path="/photos" component={Photos} />
-								<Route exact path="/covoit" component={Covoiturages} />
-								<Route exact path="/covid" component={Covid} />
-								<Route exact path="/infos" component={Informations} />
-								<Route exact path="/liste" component={Liste} />
-								<Route exact path="/" component={Accueil} />
-								<Route path="*" component={NotFound} />
-							</Switch>
-						</Suspense>
-					</ErrorBoundary>
-				</Grid>
-			</Grid>
+				<ErrorBoundary>
+					<Suspense fallback={
+						<Grid container justify="center" alignItems="center" className={classes.fallback}>
+							<CircularProgress color="secondary" />
+						</Grid>
+					}>
+						<Switch>
+							<Route exact path="/photos" component={Photos} />
+							<Route exact path="/covoit" component={Covoiturages} />
+							<Route exact path="/covid" component={Covid} />
+							<Route exact path="/infos" component={Informations} />
+							<Route exact path="/liste" component={Liste} />
+							<Route exact path="/" component={Accueil} />
+							<Route path="*" component={NotFound} />
+						</Switch>
+					</Suspense>
+				</ErrorBoundary>
 			<ServiceWorkerWrapper />
 		</Grid>
 	);

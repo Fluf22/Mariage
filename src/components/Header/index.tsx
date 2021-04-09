@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { AppBar, Button, Grid, Toolbar, Typography, useMediaQuery, Tabs, Tab, Dialog, IconButton } from '@material-ui/core';
+import { AppBar, Button, Grid, Toolbar, useMediaQuery, Tabs, Tab, Dialog, IconButton } from '@material-ui/core';
 import CloudDownloadIcon from '@material-ui/icons/CloudDownload';
 import MenuIcon from '@material-ui/icons/Menu';
 import CloseIcon from '@material-ui/icons/Close';
@@ -122,38 +122,42 @@ const Header = (props: HeaderProps) => {
 					</Grid>
 				</Toolbar>
 			</AppBar>
-			<Dialog fullScreen open={menuOpen} onClose={() => setMenuOpen(false)}>
-				<Grid container direction="column" justify="flex-start" className="h-full">
-					<Grid item container justify="flex-end" className="flex-grow-0">
-						<IconButton color="primary" onClick={() => setMenuOpen(false)}>
-							<CloseIcon />
-						</IconButton>
-					</Grid>
-					<Grid item container direction="column" justify="space-around" alignItems="center" className="flex-grow">
-						{
-							pages.map((page: PageType, idx: number) => (
-								<Grid item>
-									<Button
-										key={idx}
-										className={selectedPageIdx === idx ? classes.selectedLink : classes.navLink}
-										onClick={() => handlePageChange(idx)}
-									>
-										{
-											page.name
-										}
+			{
+				isMobile ? (
+					<Dialog fullScreen open={menuOpen} onClose={() => setMenuOpen(false)}>
+						<Grid container direction="column" justify="flex-start" className="h-full">
+							<Grid item container justify="flex-end" className="flex-grow-0">
+								<IconButton color="primary" onClick={() => setMenuOpen(false)}>
+									<CloseIcon />
+								</IconButton>
+							</Grid>
+							<Grid item container direction="column" justify="space-around" alignItems="center" className="flex-grow">
+								{
+									pages.map((page: PageType, idx: number) => (
+										<Grid item>
+											<Button
+												key={idx}
+												className={selectedPageIdx === idx ? classes.selectedLink : classes.navLink}
+												onClick={() => handlePageChange(idx)}
+											>
+												{
+													page.name
+												}
+											</Button>
+										</Grid>
+									))
+								}
+								<Grid item container justify="center">
+									<Button color="primary" onClick={() => handleInstall()} variant="outlined">
+										Installer
+									<CloudDownloadIcon className="ml-2" />
 									</Button>
 								</Grid>
-							))
-						}
-						<Grid item container justify="center">
-							<Button color="primary" onClick={() => handleInstall()} variant="outlined">
-								Installer
-							<CloudDownloadIcon className="ml-2" />
-							</Button>
+							</Grid>
 						</Grid>
-					</Grid>
-				</Grid>
-			</Dialog>
+					</Dialog>
+				) : ("")
+			}
 		</Grid>
 	);
 };

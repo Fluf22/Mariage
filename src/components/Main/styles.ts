@@ -5,18 +5,13 @@ const useStyles = makeStyles(() => createStyles({
 		height: "100%"
 	},
 	body: {
-		height: "calc(100% - 64px)"
+		height: "calc(100% - 72px)"
 	},
 	categorySelector: {
 		height: "10%"
 	},
-	slug: isMobile => ({
-		height: isMobile ? "calc(100% - 56px)" : "100%",
-		overflow: "auto",
-		paddingBottom: isMobile ? "64px" : "0px"
-	}),
 	fallback: {
-		height: "calc(100% - 64px)"
+		height: "calc(100% - 72px)"
 	}
 }));
 
