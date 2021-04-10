@@ -1,5 +1,5 @@
 import React from "react";
-import { Container, Grid, useMediaQuery } from "@material-ui/core";
+import { Grid, useMediaQuery } from "@material-ui/core";
 import useStyles from "./styles";
 import Map from "../Map";
 
