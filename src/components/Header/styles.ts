@@ -2,7 +2,7 @@ import { makeStyles, createStyles } from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => createStyles({
 	root: {
-		zIndex: 10
+		zIndex: 10,
 	},
 	toolBar: isMobile => ({
 		display: "flex",

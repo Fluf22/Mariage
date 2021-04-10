@@ -19,12 +19,13 @@ interface HomeRouteProps {
 };
 
 const Home = (props: RouteComponentProps<HomeRouteProps>) => {
-	const isMobile = useMediaQuery('(max-width:555px)');
+	const isMobile = useMediaQuery('(max-width:1360px)');
 	const classes = useStyles(isMobile);
 
 	return (
 		<Grid container direction="column" className={classes.root}>
 			<Header page={props.match.params.slug || ""} />
+			<Grid item container direction="column" className={classes.body}>
 				<ErrorBoundary>
 					<Suspense fallback={
 						<Grid container justify="center" alignItems="center" className={classes.fallback}>
@@ -42,6 +43,7 @@ const Home = (props: RouteComponentProps<HomeRouteProps>) => {
 						</Switch>
 					</Suspense>
 				</ErrorBoundary>
+			</Grid>
 			<ServiceWorkerWrapper />
 		</Grid>
 	);
