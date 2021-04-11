@@ -20,13 +20,15 @@ const useStyles = makeStyles(() => createStyles({
 		textAlign: "center"
 	},
 	links: {
-		height: "50%"
+		height: "50%",
+		overflow: "auto"
 	},
 	link: {
 		borderRadius: "38px",
 		background: "#4c7192",
 		boxShadow: "29px 29px 58px #436380, -29px -29px 58px #557fa4",
 		padding: "33px",
+		margin: "13px",
 		textAlign: "center",
 		minWidth: "200px",
 		color: "#fafafa",
