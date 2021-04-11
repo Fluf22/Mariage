@@ -24,8 +24,12 @@ const Home = (props: RouteComponentProps<HomeRouteProps>) => {
 
 	return (
 		<Grid container direction="column" className={classes.root}>
-			<Header page={props.match.params.slug || ""} />
-			<Grid item container direction="column" className={classes.body}>
+			{
+				!props.match.params.slug || props.match.params.slug === "" ? ("") : (
+					<Header page={props.match.params.slug || ""} />
+				)
+			}
+			<Grid item container direction="column" className={!props.match.params.slug || props.match.params.slug === "" ? classes.homeBody : classes.body}>
 				<ErrorBoundary>
 					<Suspense fallback={
 						<Grid container justify="center" alignItems="center" className={classes.fallback}>

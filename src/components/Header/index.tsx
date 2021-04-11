@@ -78,12 +78,13 @@ const Header = (props: HeaderProps) => {
 		<Grid container className={classes.root}>
 			<AppBar position="sticky" color="primary">
 				<Toolbar className={classes.toolBar}>
-					<Grid container direction="row" justify="space-between" alignItems="center" >
+					<Grid container direction="row" justify="space-between" alignItems="center">
 						<Grid item container direction="row" alignItems="center" xs>
 							<img src="/logo192.png" width={isMobile ? "42" : "64"} alt="Logo du mariage" className="my-1" />
 							<div
 								className="ml-1 text-2xl sm:ml-3 sm:text-4xl"
 								style={{ fontFamily: "'Parisienne', cursive" }}
+								hidden={props.page === ""}
 							>
 								Apolline & Thomas
 							</div>

@@ -16,8 +16,8 @@ const useStyles = makeStyles((theme) => createStyles({
 		height: "50%",
 		padding: "33px",
 		borderRadius: "33px",
-		background: "#FFFFFF",
-		boxShadow: "20px 20px 60px #d9d9d9, -20px -20px 60px #ffffff",
+		background: "#fafafa",
+		boxShadow: "20px 20px 60px #d9d9d9, -20px -20px 60px #fafafa",
 	},
 	button: {
 		"&:focus": {

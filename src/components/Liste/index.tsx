@@ -9,7 +9,7 @@ const Liste = () => {
 		<Grid container direction="row" justify="space-around" alignItems="center" className={classes.root}>
 			<Grid item container direction="row" justify="flex-start" alignItems="center" sm={12} md={6}>
 				<Grid item className={classes.text}>
-					Aidez-nous à rendre confortable le début de notre vie de couple...
+					Notre liste de mariage, disponible sur MilleMercisMariage
 				</Grid>
 			</Grid>
 			<Grid item container direction="row" justify="center" alignItems="center" sm={12} md={6}>

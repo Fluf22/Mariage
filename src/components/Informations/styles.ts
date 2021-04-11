@@ -34,8 +34,8 @@ const useStyles = makeStyles((theme) => createStyles({
 		padding: "22px",
 		margin: "22px",
 		borderRadius: "33px",
-		background: "#FFFFFF",
-		boxShadow: "20px 20px 60px #d9d9d9, -20px -20px 60px #ffffff",
+		background: "#fafafa",
+		boxShadow: "20px 20px 60px #d9d9d9, -20px -20px 60px #fafafa",
 	}),
 	map: {
 		width: "100%",
