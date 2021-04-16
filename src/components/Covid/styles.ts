@@ -24,10 +24,15 @@ const useStyles = makeStyles((theme) => createStyles({
 		width: "100%",
 		marginBottom: "7px"
 	},
-	button: {
+	buttonContainer: {
 		"&:focus": {
 			outline: "none"
 		}
+	},
+	button: {
+		width: "150px",
+		height: "40px",
+		transition: "all 0.3s ease 0s"
 	}
 }));
 

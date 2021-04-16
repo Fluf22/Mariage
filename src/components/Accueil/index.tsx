@@ -18,9 +18,9 @@ const pages: PageType[] = [
 		id: "covid",
 		name: "COVID-19"
 	}, {
-		id: "covoit",
-		name: "Covoiturages"
-	}, {
+	// 	id: "covoit",
+	// 	name: "Covoiturages"
+	// }, {
 		id: "hebergements",
 		name: "Hébergements"
 	}
