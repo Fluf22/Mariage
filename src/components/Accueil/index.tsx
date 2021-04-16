@@ -20,6 +20,9 @@ const pages: PageType[] = [
 	}, {
 		id: "covoit",
 		name: "Covoiturages"
+	}, {
+		id: "hebergements",
+		name: "Hébergements"
 	}
 ];
 
