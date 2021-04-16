@@ -11,7 +11,7 @@ import Main from './components/Main';
 import { QueryClient, QueryClientProvider } from 'react-query';
 import * as Realm from "realm-web";
 
-const REALM_APP_ID = "apollinethomas-fjjob";
+global.REALM_APP_ID = "apollinethomas-fjjob";
 const app: Realm.App = new Realm.App({ id: REALM_APP_ID });
 
 const loginAnonymous = async () => {
