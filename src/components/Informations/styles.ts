@@ -4,6 +4,7 @@ const useStyles = makeStyles((theme) => createStyles({
 	root: {
 		height: "100%",
 		width: "100%",
+		overflow: "auto",
 		display: "flex",
 		flexDirection: "column"
 	},

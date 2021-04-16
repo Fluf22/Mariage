@@ -7,6 +7,7 @@ import useStyles from './styles';
 import ServiceWorkerWrapper from '../ServiceWorkerWrapper';
 
 const NotFound = React.lazy(() => import('../NotFound'));
+const Hebergements = React.lazy(() => import('../Hebergements'));
 const Informations = React.lazy(() => import('../Informations'));
 const Covid = React.lazy(() => import('../Covid'));
 const Covoiturages = React.lazy(() => import('../Covoiturages'));
@@ -38,6 +39,7 @@ const Home = (props: RouteComponentProps<HomeRouteProps>) => {
 					}>
 						<Switch>
 							<Route exact path="/photos" component={Photos} />
+							<Route exact path="/hebergements" component={Hebergements} />
 							<Route exact path="/covoit" component={Covoiturages} />
 							<Route exact path="/covid" component={Covid} />
 							<Route exact path="/infos" component={Informations} />

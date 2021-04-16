@@ -12,9 +12,8 @@ const useStyles = makeStyles((theme) => createStyles({
 		color: "#4c7192"
 	},
 	card: {
-		maxWidth: "80%",
+		width: "50%",
 		height: "50%",
-		margin: "1rem",
 		padding: "33px",
 		borderRadius: "33px",
 		background: "#fafafa",
