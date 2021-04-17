@@ -12,6 +12,11 @@ const useStyles = makeStyles((theme) => createStyles({
 		fontFamily: "'Parisienne', cursive",
 		color: "#4c7192"
 	}),
+	columnSubtitle: {
+		fontSize: "22px",
+		fontFamily: "'Parisienne', cursive",
+		color: "#4c7192"
+	},
 	card: {
 		margin: "33px 0",
 		borderRadius: "33px",
