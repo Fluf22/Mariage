@@ -9,8 +9,14 @@ const ServiceWorkerWrapper = () => {
 	const [waitingWorker, setWaitingWorker] = useState<ServiceWorker | null>(null);
 
 	const onSWUpdate = (registration: ServiceWorkerRegistration) => {
-		setShowReload(true);
-		setWaitingWorker(registration.waiting);
+		const isSafari = navigator.vendor && navigator.vendor.indexOf('Apple') > -1 &&
+			navigator.userAgent &&
+			navigator.userAgent.indexOf('CriOS') === -1 &&
+			navigator.userAgent.indexOf('FxiOS') === -1;
+		if (!isSafari) {
+			setShowReload(true);
+			setWaitingWorker(registration.waiting);
+		}
 	};
 
 	useEffect(() => {
@@ -27,7 +33,7 @@ const ServiceWorkerWrapper = () => {
 		<Snackbar
 			id="update-snackbar"
 			open={showReload}
-			message="New version available!"
+			message="Nouvelle version disponible !"
 			onClick={reloadPage}
 			anchorOrigin={{ vertical: 'top', horizontal: 'center' }}
 			action={
@@ -36,7 +42,7 @@ const ServiceWorkerWrapper = () => {
 					size="small"
 					onClick={reloadPage}
 				>
-					Update
+					Mettre à jour
 				</Button>
 			}
 			className={classes.root}
