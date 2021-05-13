@@ -10,7 +10,7 @@ const NotFound = React.lazy(() => import('../NotFound'));
 const Hebergements = React.lazy(() => import('../Hebergements'));
 const Informations = React.lazy(() => import('../Informations'));
 const Covid = React.lazy(() => import('../Covid'));
-// const Covoiturages = React.lazy(() => import('../Covoiturages'));
+const Covoiturages = React.lazy(() => import('../Covoiturages'));
 const Photos = React.lazy(() => import('../Photos'));
 const Liste = React.lazy(() => import('../Liste'));
 const Accueil = React.lazy(() => import('../Accueil'));
@@ -40,9 +40,9 @@ const Home = (props: RouteComponentProps<HomeRouteProps>) => {
 						<Switch>
 							<Route exact path="/photos" component={Photos} />
 							<Route exact path="/hebergements" component={Hebergements} />
-							{/* <Route exact path="/covoit" component={Covoiturages} /> */}
-							<Route exact path="/covid" component={Covid} />
-							<Route exact path="/infos" component={Informations} />
+							<Route exact path="/covoiturages" component={Covoiturages} />
+							<Route exact path="/covid-19" component={Covid} />
+							<Route exact path="/informations" component={Informations} />
 							<Route exact path="/liste" component={Liste} />
 							<Route exact path="/" component={Accueil} />
 							<Route path="*" component={NotFound} />
