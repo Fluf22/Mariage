@@ -24,15 +24,15 @@ const pages: PageType[] = [
 		id: "liste",
 		name: "Liste de mariage"
 	}, {
-		id: "infos",
+		id: "informations",
 		name: "Informations"
 	}, {
-		id: "covid",
+		id: "covid-19",
 		name: "COVID-19"
 	}, {
-	// 	id: "covoit",
-	// 	name: "Covoiturages"
-	// }, {
+		id: "covoiturages",
+		name: "Covoiturages"
+	}, {
 		id: "hebergements",
 		name: "Hébergements"
 	}
@@ -100,18 +100,18 @@ const Header = (props: HeaderProps) => {
 									</Button>
 								</Grid>
 							) : (
-									<Tabs
-										aria-label="tab menu"
-										value={selectedPageIdx}
-										onChange={(_, newValue) => handlePageChange(newValue)}
-									>
-										{
-											pages.map((page: PageType, idx: number) => (
-												<Tab key={idx} label={page.name} className={classes.tab} />
-											))
-										}
-									</Tabs>
-								)
+								<Tabs
+									aria-label="tab menu"
+									value={selectedPageIdx}
+									onChange={(_, newValue) => handlePageChange(newValue)}
+								>
+									{
+										pages.map((page: PageType, idx: number) => (
+											<Tab key={idx} label={page.name} className={classes.tab} />
+										))
+									}
+								</Tabs>
+							)
 						}
 						{
 							showInstallButton && !isMobile ? (
@@ -138,9 +138,8 @@ const Header = (props: HeaderProps) => {
 							<Grid item container direction="column" justify="space-around" alignItems="center" className="flex-grow">
 								{
 									pages.map((page: PageType, idx: number) => (
-										<Grid item>
+										<Grid item key={idx}>
 											<Button
-												key={idx}
 												className={selectedPageIdx === idx ? classes.selectedLink : classes.navLink}
 												onClick={() => handlePageChange(idx)}
 											>

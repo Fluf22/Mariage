@@ -10,7 +10,7 @@ const useStyles = makeStyles((theme) => createStyles({
 		alignItems: "center"
 	},
 	mapContainer: {
-		width: "500px",
+		width: "100%",
 		height: "200px"
 	}
 }));

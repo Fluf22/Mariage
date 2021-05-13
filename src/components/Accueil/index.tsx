@@ -12,15 +12,15 @@ const pages: PageType[] = [
 		id: "liste",
 		name: "Liste de mariage"
 	}, {
-		id: "infos",
+		id: "informations",
 		name: "Informations"
 	}, {
-		id: "covid",
+		id: "covid-19",
 		name: "COVID-19"
 	}, {
-	// 	id: "covoit",
-	// 	name: "Covoiturages"
-	// }, {
+		id: "covoiturages",
+		name: "Covoiturages"
+	}, {
 		id: "hebergements",
 		name: "Hébergements"
 	}
