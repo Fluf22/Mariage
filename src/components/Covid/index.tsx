@@ -35,14 +35,14 @@ const Covid = () => {
 	};
 
 	return (
-		<Grid container direction="row" justify="space-around" alignItems="center" className={classes.root}>
-			<Grid item container direction="row" justify="flex-start" alignItems="center" sm={12} md={6}>
+		<Grid container direction="row" justifyContent="space-around" alignItems="center" className={classes.root}>
+			<Grid item container direction="row" justifyContent="flex-start" alignItems="center" sm={12} md={6}>
 				<Grid item className={classes.text}>
 					Entrez votre adresse e-mail pour être tenu au courant de toute modification due au Covid !
 				</Grid>
 			</Grid>
-			<Grid item container direction="row" justify="center" alignItems="center" sm={12} md={6}>
-				<Grid item container direction="row" justify="center" alignItems="center" className={classes.card}>
+			<Grid item container direction="row" justifyContent="center" alignItems="center" sm={12} md={6}>
+				<Grid item container direction="row" justifyContent="center" alignItems="center" className={classes.card}>
 					<Grid item className={classes.field}>
 						<TextField
 							label="e-mail"

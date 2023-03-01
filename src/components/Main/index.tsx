@@ -14,10 +14,11 @@ const Covoiturages = React.lazy(() => import('../Covoiturages'));
 const Photos = React.lazy(() => import('../Photos'));
 const Liste = React.lazy(() => import('../Liste'));
 const Accueil = React.lazy(() => import('../Accueil'));
+const TwoThousandTwentyTwo = React.lazy(() => import('../TwoThousandTwentyTwo'));
 
 interface HomeRouteProps {
 	slug?: string;
-};
+}
 
 const Home = (props: RouteComponentProps<HomeRouteProps>) => {
 	const isMobile = useMediaQuery('(max-width:1360px)');
@@ -33,11 +34,12 @@ const Home = (props: RouteComponentProps<HomeRouteProps>) => {
 			<Grid item container direction="column" className={!props.match.params.slug || props.match.params.slug === "" ? classes.homeBody : classes.body}>
 				<ErrorBoundary>
 					<Suspense fallback={
-						<Grid container justify="center" alignItems="center" className={classes.fallback}>
+						<Grid container justifyContent="center" alignItems="center" className={classes.fallback}>
 							<CircularProgress color="secondary" />
 						</Grid>
 					}>
 						<Switch>
+							<Route exact path="/2022" component={TwoThousandTwentyTwo} />
 							<Route exact path="/photos" component={Photos} />
 							<Route exact path="/hebergements" component={Hebergements} />
 							<Route exact path="/covoiturages" component={Covoiturages} />

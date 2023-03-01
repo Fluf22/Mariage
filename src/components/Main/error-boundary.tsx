@@ -4,7 +4,7 @@ import WarningIcon from '@material-ui/icons/Warning';
 
 interface ErrorBoundaryState {
 	hasError: boolean;
-};
+}
 
 class ErrorBoundary extends React.PureComponent<any, ErrorBoundaryState> {
 	constructor(props: any) {
@@ -25,7 +25,7 @@ class ErrorBoundary extends React.PureComponent<any, ErrorBoundaryState> {
 	render() {
 		if (this.state.hasError) {
 			return (
-				<Grid container direction="column" justify="center" alignItems="center" style={{ height: "calc(100% - 64px)" }}>
+				<Grid container direction="column" justifyContent="center" alignItems="center" style={{ height: "calc(100% - 64px)" }}>
 					<WarningIcon style={{ fontSize: "80px" }} />
 					<Typography style={{ fontSize: "40px" }}>An error as occured</Typography>
 					<Typography style={{ fontSize: "40px" }}>Please reload the page</Typography>
