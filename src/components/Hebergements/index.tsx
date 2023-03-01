@@ -48,18 +48,18 @@ const Hebergements = () => {
 	}, []);
 
 	return (
-		<Grid container direction="row" justify="space-around" className={classes.root}>
-			<Grid item container direction="column" justify="flex-start" alignItems="center" className="px-5 md:px-10" sm={12} md={5}>
+		<Grid container direction="row" justifyContent="space-around" className={classes.root}>
+			<Grid item container direction="column" justifyContent="flex-start" alignItems="center" className="px-5 md:px-10" sm={12} md={5}>
 			<Grid item className={classes.columnTitle}>Chambres sur le lieu de réception</Grid>
 			<Grid item className={classes.columnSubtitle}>Les lits sont faits, et chaque chambre dispose d'une salle de bain privative. Nécessaire de toilette (serviette de bain, savon et gel douche) en option à 2€ par personne.</Grid>
 				{
 					rooms === undefined ? (
-						<Grid item container direction="column" justify="center" alignItems="center" className="flex-grow">
+						<Grid item container direction="column" justifyContent="center" alignItems="center" className="flex-grow">
 							<CircularProgress color="primary" />
 						</Grid>
 					) : rooms.map((room: Room) => (
-						<Grid key={room._id.toString()} item container direction="column" justify="center" alignItems="flex-start" className={[classes.card, "p-5", "md:p-10"].join(" ")}>
-							<Grid item container direction="row" justify="flex-start" alignItems="center" className={classes.cardSecondaryText}>
+						<Grid key={room._id.toString()} item container direction="column" justifyContent="center" alignItems="flex-start" className={[classes.card, "p-5", "md:p-10"].join(" ")}>
+							<Grid item container direction="row" justifyContent="flex-start" alignItems="center" className={classes.cardSecondaryText}>
 								<Grid item>
 									<HotelIcon className="mb-1 mr-2" />
 								</Grid>
@@ -67,7 +67,7 @@ const Hebergements = () => {
 									{room.capacity}
 								</Grid>
 							</Grid>
-							<Grid item container direction="row" justify="flex-start" alignItems="center" className={classes.cardPrice}>
+							<Grid item container direction="row" justifyContent="flex-start" alignItems="center" className={classes.cardPrice}>
 								<Grid item>
 									<EuroIcon className="mb-1 mr-2" />
 								</Grid>
@@ -82,7 +82,7 @@ const Hebergements = () => {
 					))
 				}
 			</Grid>
-			<Grid item container direction="row" justify="center" alignItems="center" className="h-auto" sm={12} md={2}>
+			<Grid item container direction="row" justifyContent="center" alignItems="center" className="h-auto" sm={12} md={2}>
 				<Hidden mdUp>
 					<Divider orientation="horizontal" className="w-full" />
 				</Hidden>
@@ -90,16 +90,16 @@ const Hebergements = () => {
 					<Divider orientation="vertical" />
 				</Hidden>
 			</Grid>
-			<Grid item container direction="column" justify="flex-start" alignItems="center" className="px-5 md:px-10" sm={12} md={5}>
+			<Grid item container direction="column" justifyContent="flex-start" alignItems="center" className="px-5 md:px-10" sm={12} md={5}>
 				<Grid item className={classes.columnTitle}>Quelques gîtes aux alentours</Grid>
 				{
 					places === undefined ? (
-						<Grid item container direction="column" justify="center" alignItems="center" className="flex-grow">
+						<Grid item container direction="column" justifyContent="center" alignItems="center" className="flex-grow">
 							<CircularProgress color="primary" />
 						</Grid>
 					) : places.map((place: Place) => (
-						<Grid key={place._id.toString()} item container direction="column" justify="center" alignItems="flex-start" className={[classes.card, "p-5", "md:p-10"].join(" ")}>
-							<Grid item container direction="row" justify="flex-start" alignItems="center" className={classes.cardMainText}>
+						<Grid key={place._id.toString()} item container direction="column" justifyContent="center" alignItems="flex-start" className={[classes.card, "p-5", "md:p-10"].join(" ")}>
+							<Grid item container direction="row" justifyContent="flex-start" alignItems="center" className={classes.cardMainText}>
 								<Grid item>
 									<PlaceIcon className="mb-1 mr-2" />
 								</Grid>
@@ -107,7 +107,7 @@ const Hebergements = () => {
 									{place.name}
 								</Grid>
 							</Grid>
-							<Grid item container direction="row" justify="flex-start" alignItems="center" className={classes.cardSecondaryText}>
+							<Grid item container direction="row" justifyContent="flex-start" alignItems="center" className={classes.cardSecondaryText}>
 								<Grid item>
 									<HotelIcon className="mb-1 mr-2" />
 								</Grid>
@@ -115,7 +115,7 @@ const Hebergements = () => {
 									{place.capacity}
 								</Grid>
 							</Grid>
-							<Grid item container direction="row" justify="flex-start" alignItems="center" className={classes.cardSecondaryText}>
+							<Grid item container direction="row" justifyContent="flex-start" alignItems="center" className={classes.cardSecondaryText}>
 								<Grid item>
 									<DirectionsIcon className="mb-1 mr-2" />
 								</Grid>
@@ -123,7 +123,7 @@ const Hebergements = () => {
 									{place.distance}
 								</Grid>
 							</Grid>
-							<Grid item container direction="row" justify="flex-start" alignItems="center" className={classes.cardPrice}>
+							<Grid item container direction="row" justifyContent="flex-start" alignItems="center" className={classes.cardPrice}>
 								<Grid item>
 									<EuroIcon className="mb-1 mr-2" />
 								</Grid>

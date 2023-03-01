@@ -9,9 +9,9 @@ const Informations = () => {
 
 	return (
 		<div className={classes.root}>
-			<Grid container direction="row" justify="center" alignItems="center" className={classes.container}>
-				<Grid item container direction="column" justify="center" alignItems="center" sm={12}>
-					<Grid item container direction="column" justify="center" alignItems="center" className={classes.card} style={{ textAlign: "center" }}>
+			<Grid container direction="row" justifyContent="center" alignItems="center" className={classes.container}>
+				<Grid item container direction="column" justifyContent="center" alignItems="center" sm={12}>
+					<Grid item container direction="column" justifyContent="center" alignItems="center" className={classes.card} style={{ textAlign: "center" }}>
 						<Grid item className={classes.title}>Horaires</Grid>
 						<Grid item className={classes.subtitle}>Messe</Grid>
 						<Grid item className={classes.text}>15h</Grid>
@@ -21,7 +21,7 @@ const Informations = () => {
 						<Grid item className={classes.text}>20h</Grid>
 					</Grid>
 				</Grid>
-				<Grid item container direction="column" justify="center" alignItems="center" className={classes.card} sm={12} md={6}>
+				<Grid item container direction="column" justifyContent="center" alignItems="center" className={classes.card} sm={12} md={6}>
 					<Grid item container direction="row">
 						<Grid item className={classes.subtitle}>
 							Abbaye Saint Georges
@@ -35,7 +35,7 @@ const Informations = () => {
 					</Grid>
 					<Map latitude={49.4442968} longitude={0.9646081} />
 				</Grid>
-				<Grid item container direction="column" justify="center" alignItems="center" className={classes.card} sm={12} md={6}>
+				<Grid item container direction="column" justifyContent="center" alignItems="center" className={classes.card} sm={12} md={6}>
 					<Grid item container direction="row">
 						<Grid item className={classes.subtitle}>
 							Les Granges du Bosc-Grimont
