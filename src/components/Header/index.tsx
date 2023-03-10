@@ -9,12 +9,12 @@ import useStyles from './styles';
 
 interface HeaderProps {
 	page: string | undefined;
-};
+}
 
 interface PageType {
 	id: string;
 	name: string;
-};
+}
 
 const pages: PageType[] = [
 	{
@@ -27,19 +27,19 @@ const pages: PageType[] = [
 		id: "informations",
 		name: "Informations"
 	}, {
-		id: "covid-19",
-		name: "COVID-19"
-	}, {
 		id: "covoiturages",
 		name: "Covoiturages"
 	}, {
 		id: "hebergements",
 		name: "Hébergements"
+	}, {
+		id: "2022",
+		name: "2022"
 	}
 ];
 
 const Header = (props: HeaderProps) => {
-	const isMobile = useMediaQuery('(max-width:1360px)');
+	const isMobile = useMediaQuery('(max-width:1500px)');
 	const classes = useStyles(isMobile);
 	const history = useHistory();
 	const [showInstallButton, setShowInstallButton] = useState<boolean>(false);
@@ -81,11 +81,11 @@ const Header = (props: HeaderProps) => {
 		<Grid container className={classes.root}>
 			<AppBar position="sticky" color="primary">
 				<Toolbar className={classes.toolBar}>
-					<Grid container direction="row" justify="space-between" alignItems="center">
+					<Grid container direction="row" justifyContent="space-between" alignItems="center">
 						<Grid item container direction="row" alignItems="center" xs>
 							<img src="/logo192.png" width={isMobile ? "42" : "64"} alt="Logo du mariage" className="my-1" />
 							<div
-								className="ml-1 text-2xl sm:ml-3 sm:text-4xl"
+								className="ml-1 text-2xl sm:ml-3 lg:text-4xl"
 								style={{ fontFamily: "'Parisienne', cursive" }}
 								hidden={props.page === ""}
 							>
@@ -94,7 +94,7 @@ const Header = (props: HeaderProps) => {
 						</Grid>
 						{
 							isMobile ? (
-								<Grid item container justify="flex-end" xs className={classes.headerButtonContainer}>
+								<Grid item container justifyContent="flex-end" xs className={classes.headerButtonContainer}>
 									<Button color="secondary" onClick={() => setMenuOpen(true)} variant="outlined" className={classes.headerButton}>
 										<MenuIcon className={classes.headerButtonIcon} />
 									</Button>
@@ -115,7 +115,7 @@ const Header = (props: HeaderProps) => {
 						}
 						{
 							showInstallButton && !isMobile ? (
-								<Grid item container justify="flex-end" xs className={classes.headerButtonContainer}>
+								<Grid item container justifyContent="flex-end" xs className={classes.headerButtonContainer}>
 									<Button color="secondary" onClick={() => handleInstall()} variant="outlined" className={classes.headerButton}>
 										Installer
 										<CloudDownloadIcon className={classes.headerButtonIcon} />
@@ -129,13 +129,13 @@ const Header = (props: HeaderProps) => {
 			{
 				isMobile ? (
 					<Dialog fullScreen open={menuOpen} onClose={() => setMenuOpen(false)}>
-						<Grid container direction="column" justify="flex-start" className="h-full">
-							<Grid item container justify="flex-end" className="flex-grow-0">
+						<Grid container direction="column" justifyContent="flex-start" className="h-full">
+							<Grid item container justifyContent="flex-end" className="flex-grow-0">
 								<IconButton color="primary" onClick={() => setMenuOpen(false)}>
 									<CloseIcon />
 								</IconButton>
 							</Grid>
-							<Grid item container direction="column" justify="space-around" alignItems="center" className="flex-grow">
+							<Grid item container direction="column" justifyContent="space-around" alignItems="center" className="flex-grow">
 								{
 									pages.map((page: PageType, idx: number) => (
 										<Grid item key={idx}>
@@ -150,7 +150,7 @@ const Header = (props: HeaderProps) => {
 										</Grid>
 									))
 								}
-								<Grid item container justify="center">
+								<Grid item container justifyContent="center">
 									<Button color="primary" onClick={() => handleInstall()} variant="outlined">
 										Installer
 									<CloudDownloadIcon className="ml-2" />

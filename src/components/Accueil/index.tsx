@@ -5,7 +5,7 @@ import useStyles from "./styles";
 interface PageType {
 	id: string;
 	name: string;
-};
+}
 
 const pages: PageType[] = [
 	{
@@ -15,14 +15,14 @@ const pages: PageType[] = [
 		id: "informations",
 		name: "Informations"
 	}, {
-		id: "covid-19",
-		name: "COVID-19"
-	}, {
 		id: "covoiturages",
 		name: "Covoiturages"
 	}, {
 		id: "hebergements",
 		name: "Hébergements"
+	}, {
+		id: "2022",
+		name: "2022"
 	}
 ];
 
@@ -31,7 +31,7 @@ const Accueil = () => {
 	const history = useHistory();
 
 	return (
-		<Grid container direction="row" justify="center" alignItems="center" className={classes.root}>
+		<Grid container direction="row" justifyContent="center" alignItems="center" className={classes.root}>
 			<Grid item container direction="column" xs={12} className={classes.picture}>
 				<Grid item className="text-4xl sm:text-7xl md:text-8xl lg:text-9xl font-extrabold">
 					Apolline & Thomas
@@ -45,10 +45,10 @@ const Accueil = () => {
 					</SvgIcon>
 				</Grid>
 			</Grid>
-			<Grid item container direction="row" justify="space-around" alignItems="center" xs={12} className={classes.links}>
+			<Grid item container direction="row" justifyContent="space-around" alignItems="center" xs={12} className={classes.links}>
 				{
 					pages.map((page: PageType, idx: number) => (
-						<Grid key={idx} item container justify="center" alignItems="center" xs={12} sm={6} xl={3}>
+						<Grid key={idx} item container justifyContent="center" alignItems="center" xs={12} sm={6} xl={3}>
 							<Grid item onClick={() => history.push(`/${page.id}`)} className={classes.link}>{page.name}</Grid>
 						</Grid>
 					))
