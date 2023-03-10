@@ -1,4 +1,4 @@
-import {Button, CircularProgress, Grid, TextField} from "@material-ui/core";
+import {Button, CircularProgress, Grid, Link, TextField} from "@material-ui/core";
 import useStyles from "./styles";
 import CheckCircleIcon from "@material-ui/icons/CheckCircle";
 import SendIcon from "@material-ui/icons/Send";
@@ -11,6 +11,7 @@ const TwoThousandTwentyTwo = () => {
     const [isLoading, setIsLoading] = useState<boolean>(false);
     const [successState, setSuccessState] = useState<boolean | undefined>(undefined);
     const [errorState, setErrorState] = useState<boolean | undefined>(undefined);
+    const [videoLink, setVideoLink] = useState<string | undefined>(undefined);
 
     const handleSendPassword = useCallback(() => {
         setIsLoading(true);
@@ -24,13 +25,12 @@ const TwoThousandTwentyTwo = () => {
 
             setErrorState(false);
             setSuccessState(res.success);
-            setTimeout(() => {
-                window.open(res.link, "_blank")
-            }, 1500);
+            setVideoLink(res.link);
         }).catch((err: VideoLinkError) => {
             console.error(err)
             setSuccessState(err.success);
             setErrorState(true);
+            setPassword("");
         }).finally(() => {
             setIsLoading(false);
         })
@@ -41,6 +41,7 @@ const TwoThousandTwentyTwo = () => {
             <Grid item container direction="row" justifyContent="center" alignItems="center" className={classes.card}>
                 <Grid item className={classes.field}>
                     <TextField
+                        type="password"
                         label="Mot de passe"
                         variant="outlined"
                         spellCheck={false}
@@ -54,7 +55,7 @@ const TwoThousandTwentyTwo = () => {
                         style={errorState ? {} : {marginBottom: "23px"}}
                     />
                 </Grid>
-                <Grid item className={classes.buttonContainer}>
+                <Grid item container justifyContent="center" alignItems="center" className={classes.buttonContainer}>
                     {
                         isLoading ? (
                             <Button
@@ -86,6 +87,13 @@ const TwoThousandTwentyTwo = () => {
                         )
                     }
                 </Grid>
+                {
+                    videoLink != null && (
+                        <Grid item>
+                            <Link href={videoLink} target="_blank">Cliquez ici pour accéder à la vidéo</Link>
+                        </Grid>
+                    )
+                }
             </Grid>
         </Grid>
     )

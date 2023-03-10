@@ -25,6 +25,8 @@ const useStyles = makeStyles(() => createStyles({
 		marginBottom: "7px"
 	},
 	buttonContainer: {
+		width: "100%",
+		marginBottom: "7px",
 		"&:focus": {
 			outline: "none"
 		}
